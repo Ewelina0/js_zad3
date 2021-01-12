@@ -1,18 +1,20 @@
 def what_word(key, attempt):
-    i=0
+    succeded = False
     print("Zgadnijmy jakie słowo wpisałeś!")
-    while  i < attempt:
-        word1 =str(input())
-        if word1!=key:
-            print("Spróbuj ponownie.")
+
+    for i in range(attempt):
+        word = str(input())
+        if word != key:
+            print("Spróbuj ponownie")
         else:
-            print("Gratulacje!")
+            succeded = True
             break
-        i+=1
-    if(i==attempt):
-            print("Przegrywasz! Skończyła się liczba prób.")
-print("Wpisz słowo klucz:\n")
+    print("Gratulacje! Odgadłeś/aś słowo klucz!") if succeded else print("Przegrałeś! Liczba dostępnych prób wygasła")
+
+
+
+print("Wpisz słowo klucz:")
 key = str(input())
-print("Wpisz liczbę prób:\n")
+print("Wpisz liczbę prób:")
 attempt = int(input())
 what_word(key, attempt)
